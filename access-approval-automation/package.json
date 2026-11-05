@@ -1,0 +1,22 @@
+{
+  "title": "Forge Product Trigger",
+  "description": "A Forge app that demonstrates how to use product triggers.",
+  "name": "product-trigger",
+  "version": "1.1.6",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "link": true,
+  "scripts": {
+    "lint": "eslint src --ext .js,.jsx,.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "dependencies": {
+    "@forge/api": "^8.4.0",
+    "@forge/kvs": "^2.1.1"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "access-request-fields",
+  "version": "1.1.46-next.8",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@forge/api": "8.4.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "build": "npm --prefix static/hello-world run build"
+  }
+}

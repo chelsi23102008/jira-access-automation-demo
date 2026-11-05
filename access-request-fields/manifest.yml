@@ -1,0 +1,33 @@
+modules:
+  jira:uiModifications:
+    - key: access-request-fields-hello-world-ui-modifications
+      title: access-request-fields
+      resource: uiModificationsMain
+  trigger:
+    - key: access-request-fields-hello-world-ui-modifications-install
+      function: main
+      events:
+        - avi:forge:installed:app
+        - avi:forge:upgraded:app
+  function:
+    - key: main
+      handler: index.run
+resources:
+  - key: uiModificationsMain
+    path: static/hello-world/build
+permissions:
+  scopes:
+    - manage:jira-configuration
+    - read:jira-user
+    - read:jira-work
+    - write:jira-work
+    - manage:jira-project
+    - read:app-data:jira
+    - write:app-data:jira
+
+app:
+  runtime:
+    name: nodejs24.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/f4911abc-a701-4650-b1ed-ba700b0d6bf5

@@ -1,0 +1,29 @@
+modules:
+  trigger:
+    - key: access-approval-comment-trigger
+      function: main
+      events:
+        - avi:jira:commented:issue
+        - avi:jira:updated:issue
+      filter:
+        ignoreSelf: true
+
+  function:
+    - key: main
+      handler: index.run
+
+permissions:
+  scopes:
+    - read:jira-work
+    - storage:app
+  external:
+    fetch:
+      backend:
+        - address: https://api.atlassian.com
+
+app:
+  runtime:
+    name: nodejs24.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/917c8024-b91f-4f48-b71c-a4fec711ece1
